@@ -5,6 +5,7 @@ import java.sql.Statement;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Connection;
+import java.util.ArrayList;
 
 public class RolesDAO {
 
@@ -34,6 +35,7 @@ public class RolesDAO {
 
     public Roles consultarRoles(int idRoles) {
         Roles roles = null;
+
         Conexion miconexion = new Conexion();
         Connection nuevaCon;
         nuevaCon = miconexion.getConn();
@@ -55,4 +57,33 @@ public class RolesDAO {
             return roles;
         }
     }
+
+    public ArrayList<Roles> ConsultarListaRoles(String descripcionRol) {
+        ArrayList<Roles> miListadoRoles = new ArrayList<Roles>();
+
+        Conexion miconexion = new Conexion();
+        Connection nuevaCon;
+        nuevaCon = miconexion.getConn();
+
+        try {
+
+            Statement sentencia = nuevaCon.createStatement();
+
+            String querySQL = "select idRoles, descripcionRol from Roles where descripcionRol like '%" + descripcionRol + "%' ORDER BY idRoles";
+
+            ResultSet rs = sentencia.executeQuery(querySQL);
+            while (rs.next()) {
+                Roles roles = new Roles();
+                roles.setIdRoles(rs.getInt(1));
+                roles.setDescripcionRol(rs.getString(2));
+                miListadoRoles.add(roles);
+            }
+            return miListadoRoles;
+
+        } catch (Exception ex) {
+            System.err.println(ex.getMessage());
+            return miListadoRoles;
+        }
+    }
+
 }

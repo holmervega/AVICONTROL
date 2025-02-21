@@ -1,8 +1,4 @@
-<!DOCTYPE html>
-<!--
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
--->
+
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -21,7 +17,11 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
                 <div class="col">               
                     <h2 class=" fw-bold text-center py-5">inicio de sesion</h2>
 
-                    <form action="index.php?controller=loging&action=login" method="POST">
+                    <div id="error-message" class="alert alert-danger text-center" style="display: none;">
+                        Usuario o contraseña incorrectos. Inténtalo de nuevo.
+                    </div>
+
+                    <form action="LoginControl" method="POST">
                         <div class="mb-4">
                             <label for="exampleInputEmail1" class="form-label">Ingrese su usuario</label>
                             <input type="text" class="form-control" name="usuario">
@@ -35,8 +35,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
                             <a href="">¿Olvidaste tu contraseña?</a>
                         </p>
                         <div class="d-grid">
-                            <!--<!-- cambie type=submit por button para evitar que se envie el formulario y solo me redirija a home -->
-                            <button type="button" name="ingresar" class="btn btn-primary" onclick="location.href='home.html'">Ingresar</button>
+                            <button type="submit" name="ingresar" class="btn btn-primary">Ingresar</button>
                         </div>
 
 
@@ -46,6 +45,14 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
             </div>
 
         </div>
+
+        <script>
+            // Verificar si la URL tiene el parámetro "error=1" y mostrar el mensaje
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.has("error")) {
+                document.getElementById("error-message").style.display = "block";
+            }
+        </script>
 
 
 

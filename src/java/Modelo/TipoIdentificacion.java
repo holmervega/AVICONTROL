@@ -16,7 +16,7 @@ public class TipoIdentificacion {
     public String getDescripcionTipoIdentificacion() {
         return descripcionTipoIdentificacion;
     }
-
+    
     public void setDescripcionTipoIdentificacion(String descripcionTipoIdentificacion) {
         this.descripcionTipoIdentificacion = descripcionTipoIdentificacion;
     }

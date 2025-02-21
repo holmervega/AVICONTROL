@@ -30,7 +30,6 @@ public class Conexion {
             System.err.println(e.getMessage());
 
         }
-
     }
     public Connection getConn(){
         return conn;
