@@ -114,5 +114,35 @@ public class RolesDAO {
         }
         return miRespuesta;
     }
+    
+     public String EliminararRoles(Roles roles) {
+
+        String miRespuesta;
+        miRespuesta="";
+        
+        Conexion miconexion = new Conexion();
+        Connection nuevaCon;
+        nuevaCon = miconexion.getConn();
+
+        PreparedStatement sentencia;
+        try {
+            String Query = "DELETE FROM roles WHERE idRoles=?";
+            sentencia = nuevaCon.prepareStatement(Query);
+            sentencia.setInt(1, roles.getIdRoles());// ID a eliminar 
+
+            int filasAfectadas = sentencia.executeUpdate();// ejecutando la actualizacion 
+            
+            if (filasAfectadas ==0){
+                miRespuesta= "No se encontro rol con este ID";
+            }
+            miRespuesta = "";
+
+        } catch (Exception ex) {
+            miRespuesta = ex.getMessage();
+            System.out.println("Ocurrio un error en RolesDAO" + ex.getMessage());
+
+        }
+        return miRespuesta;
+    }
 
 }
