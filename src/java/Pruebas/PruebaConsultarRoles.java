@@ -10,7 +10,7 @@ public class PruebaConsultarRoles {
     public static void main(String[] args) {
         
         RolesDAO rolesDAO = new RolesDAO();
-        Roles roles = rolesDAO.consultarRoles(4);
+        Roles roles = rolesDAO.ConsultarRoles(4);
         if (roles != null){
             System.out.println("Dato encontrado:  "+roles.getDescripcionRol());
         }else{

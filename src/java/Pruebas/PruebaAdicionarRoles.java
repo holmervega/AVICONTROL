@@ -17,7 +17,7 @@ public class PruebaAdicionarRoles {
         System.out.println("Por favor digite su rol");
         descripcionRol = dato.next();
         misroles.setDescripcionRol(descripcionRol);
-        String respuesta = misrolesDAO.adicionarRoles(misroles);
+        String respuesta = misrolesDAO.AdicionarRoles(misroles);
         if (respuesta.length() == 0) {
             System.out.println("Rol registrado con exito");
         } else {
