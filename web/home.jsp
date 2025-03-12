@@ -1,9 +1,9 @@
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<!--
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
--->
 <html>
+ 
+
     <head>
         <title>Home</title>
         <meta charset="UTF-8">
@@ -16,6 +16,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
 
 
     </head>
+    
     <body>
         <header>
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -28,9 +29,9 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav ms-auto">
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="usuarios.html">USUARIOS</a>
+                                <a class="nav-link active" aria-current="page" href="UsuariosControl">USUARIOS</a>
                             </li>        
-                            <li class="nav-item">
+                            <li class="nav-item" id="menuUsuarios">
                                 <a class="nav-link active" aria-current="page" href="#">CLIENTES</a>
                             </li>
                             <li class="nav-item">
@@ -43,7 +44,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
                                 <a class="nav-link active" aria-current="page" href="home.html">INICIO</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="index.html">SALIR</a>
+                                <a class="nav-link active" aria-current="page" href="LogoutControl">SALIR</a>
                             </li>
 
                         </ul>
@@ -89,4 +90,5 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
 

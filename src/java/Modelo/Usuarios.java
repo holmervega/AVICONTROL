@@ -5,6 +5,7 @@ public class Usuarios {
     private int idUsuarios;
     private String nombreUsuario;
     private String contrasenaUsuario;
+    private Persona persona;
 
     public int getIdUsuarios() {
         return idUsuarios;
@@ -28,6 +29,14 @@ public class Usuarios {
 
     public void setContrasenaUsuario(String contrasenaUsuario) {
         this.contrasenaUsuario = contrasenaUsuario;
+    }
+
+    public Persona getPersona() {
+        return persona;
+    }
+
+    public void setPersona(Persona persona) {
+        this.persona = persona;
     }
 
 }

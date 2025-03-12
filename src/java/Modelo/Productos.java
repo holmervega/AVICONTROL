@@ -2,6 +2,9 @@ package Modelo;
 
 public class Productos {
 
+    private int idProductos;
+    private double precio;
+
     public int getIdProductos() {
         return idProductos;
     }
@@ -17,10 +20,5 @@ public class Productos {
     public void setPrecio(double precio) {
         this.precio = precio;
     }
-
-    private int idProductos;
-    private double precio;
-
-   
 
 }

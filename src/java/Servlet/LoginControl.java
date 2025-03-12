@@ -21,13 +21,13 @@ public class LoginControl extends HttpServlet {
 
    
         UsuariosDAO usuarioDAO = new UsuariosDAO();
-        boolean esValido = usuarioDAO.validarUsuario(usuario, contrasena);
+        boolean esValido = usuarioDAO.ConsultarUsuario(usuario, contrasena);
 
-        if (esValido) {
-        
-            response.sendRedirect("home.html");
+          if (esValido) {
+            // Crear una sesión para el usuario
+            request.getSession().setAttribute("usuario", usuario);
+            response.sendRedirect("home.jsp"); 
         } else {
-          
             response.sendRedirect("index.html?error=1");
         }
     }
